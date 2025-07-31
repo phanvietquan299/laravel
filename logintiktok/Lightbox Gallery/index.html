@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <div class="wrapper">
+      <div x-data="lightbox" class="lightbox">
+        <div
+          class="hero"
+          :style='{"background-image": `url(${urls[index]})`}'
+        ></div>
+        <nav>
+          <template x-for="i in urls.length">
+            <button @click="index = i-1">
+              <img :src="urls[i-1]" :class='index === i-1 && "active"' />
+            </button>
+          </template>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>
