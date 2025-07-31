@@ -1,7 +1,5 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AccountController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/api/account', [AccountController::class, 'index']);
